@@ -1,0 +1,14 @@
+<template>
+
+    <div class="slds-grid">
+        <input type="text" value={itemName} placeholder="Enter an item to add"/>
+        <lightning-input type="text" value={itemName} onchange={handleChange}></lightning-input>
+        {itemName}<button type="submit" onclick={handleAdd}>Add</button>
+
+        <template for:each={allItems} for:item='item' for:index="idx">
+            <c-to-do-item key={item} item={item}></c-to-do-item>
+
+        </template>
+    </div>
+    
+</template>
